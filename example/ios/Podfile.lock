@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - live_chat (1.0.0):
+    - Flutter
+    - LiveChat (~> 2.0.24)
+  - LiveChat (2.0.24)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - live_chat (from `.symlinks/plugins/live_chat/ios`)
+
+SPEC REPOS:
+  trunk:
+    - LiveChat
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  live_chat:
+    :path: ".symlinks/plugins/live_chat/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  live_chat: 8e92773f2e42df7aef8fa827a2faaef2cffdb6a2
+  LiveChat: 63028afb59c57ae6771d59838b1097def6e560ed
+
+PODFILE CHECKSUM: 7be2f5f74864d463a8ad433546ed1de7e0f29aef
+
+COCOAPODS: 1.13.0
