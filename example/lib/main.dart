@@ -21,14 +21,12 @@ class _AppState extends State<App> {
   void initState() {
     super.initState();
 
-    subscription = LiveChat().onEventReceived?.listen((event) {
+    subscription = LiveChat().onLiveChatEventReceived?.listen((event) {
       switch (event) {
         case 'chatOpen':
           break;
         case 'chatClose':
           _canGoBack = true;
-          break;
-        case 'ready':
           break;
 
         default:
@@ -44,7 +42,7 @@ class _AppState extends State<App> {
     if (!_canGoBack) {
       _canGoBack = true;
 
-      LiveChat().closeChatView();
+      LiveChat().closeChatWindow();
     }
   }
 
@@ -52,7 +50,7 @@ class _AppState extends State<App> {
       setState(() => _unreadNotificationCounter = counter);
 
   Future<void> openChatView() async {
-    await LiveChat().openChatView(
+    await LiveChat().openChatWindow(
       licenseId: '<LICENSE ID>',
       username: '<USERNAME>',
       email: '<EMAIL>',
@@ -64,11 +62,11 @@ class _AppState extends State<App> {
   }
 
   Future<void> closeChatView() async {
-    await LiveChat().closeChatView();
+    await LiveChat().closeChatWindow();
   }
 
   Future<void> clearChatView() async {
-    await LiveChat().clearChatView();
+    await LiveChat().clearChatSession();
   }
 
   @override

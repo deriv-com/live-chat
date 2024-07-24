@@ -6,9 +6,9 @@ public class LiveChatPlugin: NSObject, FlutterPlugin, LiveChatDelegate, FlutterS
     
     static let LIVE_CHAT_METHOD_CHANNEL = "live_chat/channel"
     static let LIVE_CHAT_EVENT_CHANNEL = "live_chat/events"
-    let OPEN_LIVE_CHAT_VIEW = "open_live_chat_view"
-    let CLOSE_LIVE_CHAT_VIEW = "close_live_chat_view"
-    let CLEAR_LIVE_CHAT_VIEW = "clear_live_chat_view"
+    let OPEN_CHAT_WINDOW = "open_chat_window"
+    let CLOSE_CHAT_WINDOW = "close_chat_window"
+    let CLEAR_CHAT_SESSION = "clear_chat_session"
     
     private var lifecycleSink: FlutterEventSink?
     
@@ -24,7 +24,7 @@ public class LiveChatPlugin: NSObject, FlutterPlugin, LiveChatDelegate, FlutterS
     
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
-        case OPEN_LIVE_CHAT_VIEW:
+        case OPEN_CHAT_WINDOW:
             let arguments = call.arguments as! [String: Any]
             let licenseId = (arguments["licenseId"] as? String)
             let visitorName = (arguments["visitorName"] as? String)
@@ -57,10 +57,10 @@ public class LiveChatPlugin: NSObject, FlutterPlugin, LiveChatDelegate, FlutterS
                 
                 result(nil)
             }
-        case CLOSE_LIVE_CHAT_VIEW:
+        case CLOSE_CHAT_WINDOW:
             LiveChat.dismissChat()
             result(nil)
-        case CLEAR_LIVE_CHAT_VIEW:
+        case CLEAR_CHAT_SESSION:
             LiveChat.clearSession()
             result(nil)
             

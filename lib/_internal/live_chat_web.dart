@@ -19,7 +19,7 @@ class LiveChatWeb extends LiveChatPlatform {
       StreamController<dynamic>.broadcast();
 
   @override
-  Future<void> openChatView({
+  Future<void> openChatWindow({
     required String licenseId,
     required String username,
     required String email,
@@ -30,7 +30,7 @@ class LiveChatWeb extends LiveChatPlatform {
   }
 
   @override
-  Stream? getEventsStream() {
+  Stream? getLiveChatEventsStream() {
     eventProducer.on('event', js.allowInterop((data) {
       _streamController.add(data);
     }));
@@ -38,12 +38,12 @@ class LiveChatWeb extends LiveChatPlatform {
   }
 
   @override
-  Future<void> closeChatView() async {
+  Future<void> closeChatWindow() async {
     _jsHelper.callHideWindow();
   }
 
   @override
-  Future<void> clearChatView() async {
+  Future<void> clearChatSession() async {
     _jsHelper.callDestroyWindow();
   }
 }

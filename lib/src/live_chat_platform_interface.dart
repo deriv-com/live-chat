@@ -21,7 +21,7 @@ abstract class LiveChatPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> openChatView({
+  Future<void> openChatWindow({
     required String licenseId,
     required String username,
     required String email,
@@ -31,15 +31,15 @@ abstract class LiveChatPlatform extends PlatformInterface {
     throw UnimplementedError('openChatView() has not been implemented.');
   }
 
-  Future<void> closeChatView() {
+  Future<void> closeChatWindow() {
     throw UnimplementedError('closeChatView() has not been implemented.');
   }
 
-  Future<void> clearChatView() {
+  Future<void> clearChatSession() {
     throw UnimplementedError('clearChatView() has not been implemented.');
   }
 
-  Stream<dynamic>? getEventsStream() {
+  Stream<dynamic>? getLiveChatEventsStream() {
     throw UnimplementedError('getEventsStream() has not been implemented.');
   }
 }

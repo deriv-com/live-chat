@@ -49,7 +49,7 @@ class LiveChatPlugin :
 
     override fun onMethodCall(call: MethodCall, result: Result) {
         when (call.method) {
-            OPEN_LIVE_CHAT_VIEW -> {
+            OPEN_CHAT_WINDOW -> {
                 val licenseId = call.argument<String>("licenseId")
                 val visitorName = call.argument<String>("visitorName")
                 val visitorEmail = call.argument<String>("visitorEmail")
@@ -125,7 +125,7 @@ class LiveChatPlugin :
                 result.success(null)
             }
 
-            CLOSE_LIVE_CHAT_VIEW -> {
+            CLOSE_CHAT_WINDOW -> {
                 chatWindowView?.setEventsListener(null)
                 chatWindowView?.onBackPressed()
                 chatWindowView = null
@@ -133,9 +133,9 @@ class LiveChatPlugin :
                 result.success(null)
             }
 
-            CLEAR_LIVE_CHAT_VIEW -> {
+            CLEAR_CHAT_SESSION -> {
                 ChatWindowUtils.clearSession(activity)
-                chatWindowView?.reload(true)
+                chatWindowView?.reload(false)
 
                 result.success(null)
             }
@@ -180,8 +180,8 @@ class LiveChatPlugin :
     companion object {
         const val LIVE_CHAT_METHOD_CHANNEL = "live_chat/channel"
         const val LIVE_CHAT_EVENT_CHANNEL = "live_chat/events"
-        const val OPEN_LIVE_CHAT_VIEW = "open_live_chat_view"
-        const val CLOSE_LIVE_CHAT_VIEW = "close_live_chat_view"
-        const val CLEAR_LIVE_CHAT_VIEW = "clear_live_chat_view"
+        const val OPEN_CHAT_WINDOW = "open_chat_window"
+        const val CLOSE_CHAT_WINDOW = "close_chat_window"
+        const val CLEAR_CHAT_SESSION = "clear_chat_session"
     }
 }

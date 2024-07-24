@@ -9,14 +9,14 @@ class LiveChat {
 
   LiveChat._internal();
 
-  Future<void> openChatView({
+  Future<void> openChatWindow({
     required String licenseId,
     required String username,
     required String email,
     String? groupId,
     Map<String, String>? customParameters,
   }) async {
-    return LiveChatPlatform.instance.openChatView(
+    return LiveChatPlatform.instance.openChatWindow(
       licenseId: licenseId,
       username: username,
       email: email,
@@ -25,14 +25,14 @@ class LiveChat {
     );
   }
 
-  Future<void> closeChatView() async {
-    return LiveChatPlatform.instance.closeChatView();
+  Future<void> closeChatWindow() async {
+    return LiveChatPlatform.instance.closeChatWindow();
   }
 
-  Future<void> clearChatView() async {
-    return LiveChatPlatform.instance.clearChatView();
+  Future<void> clearChatSession() async {
+    return LiveChatPlatform.instance.clearChatSession();
   }
 
-  Stream<dynamic>? get onEventReceived =>
-      LiveChatPlatform.instance.getEventsStream();
+  Stream<dynamic>? get onLiveChatEventReceived =>
+      LiveChatPlatform.instance.getLiveChatEventsStream();
 }
