@@ -28,6 +28,8 @@ class _AppState extends State<App> {
         case 'chatClose':
           _canGoBack = true;
           break;
+        case 'ready':
+          break;
 
         default:
           _setCounter(++_unreadNotificationCounter);
@@ -59,6 +61,14 @@ class _AppState extends State<App> {
     );
 
     _canGoBack = false;
+  }
+
+  Future<void> closeChatView() async {
+    await LiveChat().closeChatView();
+  }
+
+  Future<void> clearChatView() async {
+    await LiveChat().clearChatView();
   }
 
   @override
@@ -94,31 +104,36 @@ class _AppState extends State<App> {
                           color: Colors.redAccent,
                         ),
                       )
-                    : Container()
+                    : const SizedBox.shrink()
               ]),
             ],
           ),
           body: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 36, 0, 0),
+                padding: const EdgeInsets.only(top: 36),
                 child: Center(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.blue[500],
-                    ),
-                    child: TextButton(
-                      onPressed: openChatView,
-                      child: const Text(
-                        'Start Live Chat',
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w800,
-                          color: Color(0xFFFFFFFF),
-                        ),
-                      ),
-                    ),
+                  child: ElevatedButton(
+                    onPressed: openChatView,
+                    child: const Text('Start Live Chat'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: Center(
+                  child: ElevatedButton(
+                    onPressed: closeChatView,
+                    child: const Text('Close Live Chat'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: Center(
+                  child: ElevatedButton(
+                    onPressed: clearChatView,
+                    child: const Text('Clear Chat Session'),
                   ),
                 ),
               )

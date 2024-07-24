@@ -1,4 +1,18 @@
-import 'dart:js_interop';
+import 'package:js/js.dart';
 
-@JS("startLiveChat")
+@JS()
+class EventProducer {
+  external void on(String event, Function listener);
+}
+
+@JS('window.eventProducer')
+external EventProducer get eventProducer;
+
+@JS()
 external void startLiveChat(String licence, String userName, String email);
+
+@JS()
+external void hideWindow();
+
+@JS()
+external void destroyWindow();

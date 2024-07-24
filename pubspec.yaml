@@ -7,6 +7,7 @@ homepage: https://github.com/deriv-com/live-chat
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
+  flutter: '>=3.3.0'
 
 dependencies:
   flutter:
@@ -14,6 +15,7 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   web: ^1.0.0
+  js: ^0.7.1
   plugin_platform_interface: ^2.1.8
 
 dev_dependencies:

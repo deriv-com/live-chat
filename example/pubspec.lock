@@ -43,6 +43,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  js:
+    dependency: transitive
+    description:
+      name: js
+      sha256: c1b2e9b5ea78c45e1a0788d29606ba27dc5f71f019f32ca5140f61ef071838cf
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.7.1"
   lints:
     dependency: transitive
     description:
@@ -105,3 +113,4 @@ packages:
     version: "1.0.0"
 sdks:
   dart: ">=3.4.3 <4.0.0"
+  flutter: ">=3.3.0"

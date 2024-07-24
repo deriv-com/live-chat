@@ -59,7 +59,7 @@ import 'package:live_chat/live_chat.dart';
     );
 ```
 
-- You can subscribe to an event stream to listen to events coming from livechat. This is not supported in web at the moment.
+- You can subscribe to an event stream to listen to events coming from livechat.
 
 ```dart
 LiveChat().onEventReceived?.listen((event) {
@@ -75,12 +75,19 @@ LiveChat().onEventReceived?.listen((event) {
     });
 ```
 
-- In mobile, you call close the chat window and clear the current chat session as follows:
+- You call close the chat window by simply calling:
 
 ```dart
 LiveChat().closeChatView();
+```
+
+- In order to clear the session in mobile, for example, after logging out, you can call:
+
+```dart
 LiveChat().clearChatView();
 ```
+
+This will call [destroy](https://platform.text.com/docs/extending-chat-widget/javascript-api#destroy) on web.
 
 ## Sample App
 Refer to the **example** folder for a working app. Just ensure you have a valid license id.
