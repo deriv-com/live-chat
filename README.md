@@ -50,7 +50,7 @@ import 'package:live_chat/live_chat.dart';
 - To open the chat window, call openChatView as follows:
 
 ```dart
-    await LiveChat().openChatView(
+    await LiveChat().openChatWindow(
       licenseId: '<LICENSE ID>',
       username: '<USERNAME>',
       email: '<EMAIL>',
@@ -62,7 +62,7 @@ import 'package:live_chat/live_chat.dart';
 - You can subscribe to an event stream to listen to events coming from livechat.
 
 ```dart
-LiveChat().onEventReceived?.listen((event) {
+LiveChat().onLiveChatEventReceived?.listen((event) {
       switch (event) {
         case 'chatOpen':
           break;
@@ -78,16 +78,16 @@ LiveChat().onEventReceived?.listen((event) {
 - You call close the chat window by simply calling:
 
 ```dart
-LiveChat().closeChatView();
+LiveChat().closeChatWindow();
 ```
 
 - In order to clear the session in mobile, for example, after logging out, you can call:
 
 ```dart
-LiveChat().clearChatView();
+LiveChat().clearChatSession();
 ```
 
 This will call [destroy](https://platform.text.com/docs/extending-chat-widget/javascript-api#destroy) on web.
 
 ## Sample App
-Refer to the **example** folder for a working app. Just ensure you have a valid license id.
+Refer to the [example](https://github.com/deriv-com/live-chat/tree/master/example) folder for a working app. Just ensure you have a valid license id.
