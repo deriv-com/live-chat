@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
-import 'package:live_chat/src/js/js_helper_web.dart';
-import 'package:live_chat/src/js/js_library.dart';
-import 'package:live_chat/src/live_chat_platform_interface.dart';
+import 'package:live_chat_plus/src/js/js_helper_web.dart';
+import 'package:live_chat_plus/src/js/js_library.dart';
+import 'package:live_chat_plus/src/live_chat_platform_interface.dart';
 import 'package:js/js_util.dart' as js;
 
 /// A web implementation of the LiveChatPlatform of the LiveChat plugin.

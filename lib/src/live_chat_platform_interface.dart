@@ -1,4 +1,4 @@
-import 'package:live_chat/src/live_chat_method_channel.dart';
+import 'package:live_chat_plus/src/live_chat_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 abstract class LiveChatPlatform extends PlatformInterface {

@@ -1,4 +1,4 @@
-import 'package:live_chat/src/live_chat_platform_interface.dart';
+import 'package:live_chat_plus/src/live_chat_platform_interface.dart';
 
 class LiveChat {
   static final LiveChat _singleton = LiveChat._internal();
