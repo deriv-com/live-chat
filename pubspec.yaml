@@ -1,6 +1,6 @@
 name: live_chat_plus
 description: "A Flutter plugin to bring LiveChat functionality to Flutter"
-version: 1.0.2
+version: 1.0.3
 repository: https://github.com/deriv-com/live-chat
 issue_tracker: https://github.com/deriv-com/live-chat/issues
 homepage: https://github.com/deriv-com/live-chat
