@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:live_chat/live_chat.dart';
+import 'package:live_chat_plus/live_chat_plus.dart';
 
 void main() => runApp(const App());
 

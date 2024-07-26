@@ -1,12 +1,12 @@
 <p style="text-align: left;">
-<a href="https://pub.dev/packages/live_chat"><img src="https://img.shields.io/pub/v/live_chat.svg" alt="Pub"></a>
+<a href="https://pub.dev/packages/live_chat_plus"><img src="https://img.shields.io/pub/v/live_chat_plus.svg" alt="Pub"></a>
 </p>
 
 # live-chat
 LiveChat is a plugin that brings [LiveChat](https://www.livechat.com/) functionality to Flutter Mobile and Web.
 
 ## Installation
-First, add `live_chat` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+First, add `live_chat_plus` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
 ### Android
 
@@ -37,14 +37,14 @@ Nothing is needed.
 ### Web
 Inside index.html file, add this line inside `<head></head>` tag:
 ```html
- <script src="./packages/live_chat/src/js/live_chat.js" defer></script>
+ <script src="./packages/live_chat_plus/src/js/live_chat.js" defer></script>
 ```
 
 ## Usage
 - To start, import the following:
 
 ```dart
-import 'package:live_chat/live_chat.dart';
+import 'package:live_chat_plus/live_chat_plus.dart';
 ```
 
 - To open the chat window, call openChatView as follows:

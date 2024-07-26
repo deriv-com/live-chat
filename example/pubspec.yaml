@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  live_chat:
+  live_chat_plus:
     path: ../
 
   cupertino_icons: ^1.0.8

@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = 'live_chat'
+  s.name             = 'live_chat_plus'
   s.version          = '1.0.0'
   s.summary          = 'A Flutter plugin to bring LiveChat functionality to Flutter'
   s.description      = <<-DESC

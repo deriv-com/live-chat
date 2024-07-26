@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
-import 'package:live_chat/src/live_chat_platform_interface.dart';
-import 'package:live_chat/src/utils/constants.dart';
+import 'package:live_chat_plus/src/live_chat_platform_interface.dart';
+import 'package:live_chat_plus/src/utils/constants.dart';
 
 /// An implementation of [LiveChatPlatform] that uses method channels.
 class MethodChannelLiveChat extends LiveChatPlatform {
