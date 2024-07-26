@@ -2,7 +2,7 @@
 <a href="https://pub.dev/packages/live_chat_plus"><img src="https://img.shields.io/pub/v/live_chat_plus.svg" alt="Pub"></a>
 </p>
 
-# live-chat
+# live_chat_plus
 LiveChat is a plugin that brings [LiveChat](https://www.livechat.com/) functionality to Flutter Mobile and Web.
 
 ## Installation
@@ -10,29 +10,15 @@ First, add `live_chat_plus` as a [dependency in your pubspec.yaml file](https://
 
 ### Android
 
-Step 1: Include JitPack repository in your Project-level build.gradle file:
-```groovy
-allprojects {
-    repositories {
-        .
-        .
-        .
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-Step 2: Ensure you have added Internet permission in AndroidManifest.xml file:
+Step 1: Ensure you have added Internet permission in AndroidManifest.xml file:
 ```xml
  <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-Step 3: To avoid issues with proguard enabled, include the following to proguard.pro file:
+Step 2: To avoid issues with proguard enabled, include the following to proguard.pro file:
 ```
 -keep class com.livechatinc.inappchat.** { *; }
 ```
-
-### iOS 
-Nothing is needed.
 
 ### Web
 Inside index.html file, add this line inside `<head></head>` tag:
