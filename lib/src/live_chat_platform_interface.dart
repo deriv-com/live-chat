@@ -28,18 +28,18 @@ abstract class LiveChatPlatform extends PlatformInterface {
     String? groupId,
     Map<String, String>? customParameters,
   }) {
-    throw UnimplementedError('openChatView() has not been implemented.');
+    throw UnimplementedError('openChatWindow() has not been implemented.');
   }
 
   Future<void> closeChatWindow() {
-    throw UnimplementedError('closeChatView() has not been implemented.');
+    throw UnimplementedError('closeChatWindow() has not been implemented.');
   }
 
   Future<void> clearChatSession() {
-    throw UnimplementedError('clearChatView() has not been implemented.');
+    throw UnimplementedError('clearChatSession() has not been implemented.');
   }
 
   Stream<dynamic>? getLiveChatEventsStream() {
-    throw UnimplementedError('getEventsStream() has not been implemented.');
+    throw UnimplementedError('getLiveChatEventsStream() has not been implemented.');
   }
 }
