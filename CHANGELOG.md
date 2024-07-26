@@ -1,3 +1,7 @@
+## 1.0.3
+
+* Refactored build.gradle to avoid adding maven jitpack.io to the client project.
+
 ## 1.0.2
 
 * Using js version 0.6.3.
