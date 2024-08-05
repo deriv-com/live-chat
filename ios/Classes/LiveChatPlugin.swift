@@ -30,7 +30,7 @@ public class LiveChatPlugin: NSObject, FlutterPlugin, LiveChatDelegate, FlutterS
             let visitorName = (arguments["visitorName"] as? String)
             let visitorEmail = (arguments["visitorEmail"] as? String)
             let groupId = (arguments["groupId"] as? String)
-            let customParams = (arguments["customParams"] as! [String: String])
+            let customParams = (arguments["customParams"] as? [String: String])
             
             if licenseId == "" {
                 result(FlutterError(code: "", message: "LICENSE NUMBER EMPTY", details: nil))
@@ -40,8 +40,10 @@ public class LiveChatPlugin: NSObject, FlutterPlugin, LiveChatDelegate, FlutterS
                 LiveChat.email = visitorEmail
                 LiveChat.groupId = groupId
                 
-                for (key, value) in customParams {
-                    LiveChat.setVariable(withKey: key, value: value)
+                if(customParams != nil) {
+                    for (key, value) in customParams! {
+                        LiveChat.setVariable(withKey: key, value: value)
+                    }
                 }
                 
                 LiveChat.delegate = self

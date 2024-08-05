@@ -1,7 +1,9 @@
 import 'package:live_chat_plus/src/live_chat_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
+/// LiveChatPlatform contract.
 abstract class LiveChatPlatform extends PlatformInterface {
+  /// Constructs the contract.
   LiveChatPlatform() : super(token: _token);
 
   static final Object _token = Object();
@@ -21,6 +23,7 @@ abstract class LiveChatPlatform extends PlatformInterface {
     _instance = instance;
   }
 
+  /// Open the chat window.
   Future<void> openChatWindow({
     required String licenseId,
     required String username,
@@ -31,15 +34,19 @@ abstract class LiveChatPlatform extends PlatformInterface {
     throw UnimplementedError('openChatWindow() has not been implemented.');
   }
 
+  /// Close the chat window.
   Future<void> closeChatWindow() {
     throw UnimplementedError('closeChatWindow() has not been implemented.');
   }
 
+  /// Clea the chat session.
   Future<void> clearChatSession() {
     throw UnimplementedError('clearChatSession() has not been implemented.');
   }
 
+  /// Get the live chat events stream.
   Stream<dynamic>? getLiveChatEventsStream() {
-    throw UnimplementedError('getLiveChatEventsStream() has not been implemented.');
+    throw UnimplementedError(
+        'getLiveChatEventsStream() has not been implemented.');
   }
 }

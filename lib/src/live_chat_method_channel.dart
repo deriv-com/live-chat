@@ -18,31 +18,27 @@ class MethodChannelLiveChat extends LiveChatPlatform {
     required String email,
     String? groupId,
     Map<String, String>? customParameters,
-  }) {
-    return _methodChannel.invokeMethod<dynamic>(
-      openChatWindowKey,
-      <String, dynamic>{
-        licenseIdKey: licenseId,
-        visitorNameKey: username,
-        visitorEmailKey: email,
-        groupIdKey: groupId,
-        customParamsKey: customParameters,
-      },
-    );
-  }
+  }) =>
+      _methodChannel.invokeMethod<dynamic>(
+        openChatWindowKey,
+        <String, dynamic>{
+          licenseIdKey: licenseId,
+          visitorNameKey: username,
+          visitorEmailKey: email,
+          groupIdKey: groupId,
+          customParamsKey: customParameters,
+        },
+      );
 
   @override
-  Future<void> closeChatWindow() async {
-    return _methodChannel.invokeMethod<dynamic>(closeChatWindowKey);
-  }
+  Future<void> closeChatWindow() async =>
+      _methodChannel.invokeMethod<dynamic>(closeChatWindowKey);
 
   @override
-  Future<void> clearChatSession() async {
-    return _methodChannel.invokeMethod<dynamic>(clearChatSessionKey);
-  }
+  Future<void> clearChatSession() async =>
+      _methodChannel.invokeMethod<dynamic>(clearChatSessionKey);
 
   @override
-  Stream? getLiveChatEventsStream() {
-    return _eventsChannel.receiveBroadcastStream();
-  }
+  Stream<dynamic>? getLiveChatEventsStream() =>
+      _eventsChannel.receiveBroadcastStream();
 }
