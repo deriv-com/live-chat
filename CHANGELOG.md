@@ -1,3 +1,8 @@
+## 1.0.5
+
+* Minor code refactoring.
+* Fixed a bug in iOS when passing null customParams.
+
 ## 1.0.4
 
 * Updated README

@@ -8,8 +8,10 @@ import 'package:js/js_util.dart' as js;
 
 /// A web implementation of the LiveChatPlatform of the LiveChat plugin.
 class LiveChatWeb extends LiveChatPlatform {
+  /// Constructs LiveChatWeb
   LiveChatWeb();
 
+  /// Register livechat instance when web.
   static void registerWith(Registrar registrar) {
     LiveChatPlatform.instance = LiveChatWeb();
   }
@@ -30,8 +32,8 @@ class LiveChatWeb extends LiveChatPlatform {
   }
 
   @override
-  Stream? getLiveChatEventsStream() {
-    eventProducer.on('event', js.allowInterop((data) {
+  Stream<dynamic>? getLiveChatEventsStream() {
+    eventProducer.on('event', js.allowInterop((dynamic data) {
       _streamController.add(data);
     }));
     return _streamController.stream;

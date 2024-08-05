@@ -23,7 +23,7 @@ Step 2: To avoid issues with proguard enabled, include the following to proguard
 ### Web
 Inside index.html file, add this line inside `<head></head>` tag:
 ```html
- <script src="./packages/live_chat_plus/src/js/live_chat.js" defer></script>
+ <script src="./assets/packages/live_chat_plus/assets/live_chat.js" defer></script>
 ```
 
 ## Usage
